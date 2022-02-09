@@ -11,5 +11,5 @@
 
 - [ ] **Deliverable 1:**
 
-  https://docs.google.com/document/d/1YeVpz7PfUOq-iSmBi_79M-86-pbN34PYpMBloyBucjc/edit?usp=sharing
+  https://docs.google.com/document/d/19w0kBEpAm2az9N1ibb-LJjtu5M13gbCcWDtqgQb7EnE/edit?usp=sharing
 
