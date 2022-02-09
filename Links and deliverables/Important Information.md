@@ -8,8 +8,3 @@
 - [ ] **Agenda:** 
 
   https://docs.google.com/document/d/1ewJKQuPVTPdazSmsCiP-WBXFAG97R6C2yPEfn1S3dKQ/edit?usp=sharing
-
-- [ ] **Deliverable 1:**
-
-  https://docs.google.com/document/d/19w0kBEpAm2az9N1ibb-LJjtu5M13gbCcWDtqgQb7EnE/edit?usp=sharing
-
