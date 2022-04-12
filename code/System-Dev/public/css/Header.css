@@ -1,0 +1,147 @@
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+    color: white;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+      url("images/HomeBanner.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .header h1 {
+    font-size: 50px;
+  }
+  
+  .contact-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+  }
+  
+  .contact-btn:hover {
+    border: 1px solid #ff5a5f;
+    background: #ff5a5f;
+    transition: 1s;
+  }
+  
+  .contact-btn:not(:hover) {
+    border: 1px solid #fff;
+    background: transparent;
+    transition: 1s;
+  }
+  
+  /* NAVIGATION STYLE */
+  
+  .navigation-top {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .navigation-top > .nav-links {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navigation-top > .nav-links:hover {
+    background-color: rgb(161, 0, 0);
+  }
+  
+  .navigation-top a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .leftcolumn {
+    float: left;
+    width: 70%;
+  }
+  
+  /* RIGHT COLUMN STYLE */
+  
+  .rightcolumn {
+    float: left;
+    width: 30%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  /* OVERALL COLUMN STYLE */
+  
+  .box {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* FOOTER STYLE */
+  
+  .footer {
+    padding: 5px;
+    position: absolute;
+    background: rgb(54, 54, 54);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 220px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* RESPONSIVE SIZING */
+  
+  @media screen and (max-width: 800px) {
+    .leftcolumn,
+    .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .navigation-top a {
+      float: none;
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .navigation-top > .nav-links {
+      float: none;
+      width: 100%;
+    }
+  }
+  
