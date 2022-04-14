@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2022 at 05:55 AM
+-- Generation Time: Apr 13, 2022 at 06:36 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -74,6 +74,7 @@ CREATE TABLE `client_account` (
 
 INSERT INTO `client_account` (`email`, `pass_hash`) VALUES
 ('a@gmail.com', '$2y$10$pATRPiiavqzlTiE9oxJWWe6J.ZEDCiED5wUQn12i1XzyODbrABClu'),
+('aa@gmail.com', '$2y$10$C5fCIUeNkTFrWxLDRM0pwec.lHUEeLTph4Ag0PByOmfvKH35/zBSa'),
 ('b@gmail.com', '$2y$10$ZDhhIgQGoNzUNMvMm9hQQu/PllJbMY4l1Zodu2xYdpo/urrKUU2v.'),
 ('harry@gmail.com', '$2y$10$DnaEEO0BdZogsy0r4/TgpOxAgwp1Z8vhn0Oh52ZgsmNwtLEJ7BVzK');
 
@@ -102,6 +103,21 @@ CREATE TABLE `question` (
   `client_profile_id` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `question_description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questionnotloggedin`
+--
+
+CREATE TABLE `questionnotloggedin` (
+  `question_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `question` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -169,6 +185,12 @@ ALTER TABLE `question`
   ADD KEY `client_profile_id` (`client_profile_id`);
 
 --
+-- Indexes for table `questionnotloggedin`
+--
+ALTER TABLE `questionnotloggedin`
+  ADD PRIMARY KEY (`question_id`);
+
+--
 -- Indexes for table `reply`
 --
 ALTER TABLE `reply`
@@ -208,6 +230,12 @@ ALTER TABLE `client_profile`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `questionnotloggedin`
+--
+ALTER TABLE `questionnotloggedin`
   MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
