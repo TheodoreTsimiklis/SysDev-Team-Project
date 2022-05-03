@@ -15,5 +15,12 @@
     
             return $this->db->execute();
         }
+
+        public function loginQuestion($data) {
+            $this->db->query("INSERT INTO question (question_description) VALUES (:question_description)");
+            $this->db->bind(":question_description", $data['question_description']);
+    
+            return $this->db->execute();
+        }
     }
 ?>

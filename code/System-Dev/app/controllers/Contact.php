@@ -7,76 +7,58 @@ class Contact extends Controller {
     }
 
     public function index() {
-        if (!isset($_POST['submit'])) {
-            $this->view('Contact/index');
-        
-        
-            $data = [
-                'first_name' => trim($_POST['fName']),
-                'last_name' => trim($_POST['lName']),
-                'phone' => trim($_POST['pNumber']),
-                'email' => trim($_POST['email']),
-                'question' => trim($_POST['question'])
-            ];
+        if (isLoggedIn()){
+            if (isset($_POST['submit'])) {
 
-            if ($this->contactModel->createQuestion($data)) {
-                echo 'sending information...';
-                echo '<meta http-equiv="refresh" content="4;url=http://localhost/System-Dev/Contact/confirmation" />';
-            } else {
-                echo 'error';
-                echo '<meta http-equiv="refresh" content="4;url=http://localhost/System-Dev/" />';
 
-            }
-        }
-        /*if (isLoggedIn()) {
-            if (!isset($_POST['loginsubmit'])) {
-                $this->view('Contact/index');
-            } else {
-                echo 'hello world';
+            
                 $data = [
-                    'firstName' => trim($_POST['firstName']),
-                    'lastName' => trim($_POST['lastName']),
-                    'email' => trim($_POST['email']),
-                    'subject' => trim($_POST['subject']),
-                    'user_id' => $_SESSION['user_id']
+                    'question_description' => trim($_POST['question_description'])
                 ];
-    
-                if ($this->contactModel->createContact($data)) {
+
+                if ($this->contactModel->loginQuestion($data)) {
                     echo 'sending information...';
-                    echo '<meta http-equiv="refresh" content="4;url=http://localhost/eCommerce-Project/" />';
+                    echo '<meta http-equiv="refresh" content="4;url=http://localhost/System-Dev/Contact/confirmation" />';
                 } else {
                     echo 'error';
-                    echo '<meta http-equiv="refresh" content="4;url=http://localhost/eCommerce-Project/" />';
-    
+                    echo '<meta http-equiv="refresh" content="4;url=http://localhost/System-Dev/" />';
+
                 }
-            }
-        }else{
-            if (!isset($_POST['submit'])) {
+                } else {
                 $this->view('Contact/index');
-            } else {
-                echo 'hello world';
+            }
+        } else {
+            if (isset($_POST['submit'])) {
+
+
+            
                 $data = [
-                    'fName' => trim($_POST['fName']),
-                    'lName' => trim($_POST['lName']),
-                    'phone' => trim($_POST['phone']),
+                    'first_name' => trim($_POST['fName']),
+                    'last_name' => trim($_POST['lName']),
+                    'phone' => trim($_POST['pNumber']),
                     'email' => trim($_POST['email']),
                     'question' => trim($_POST['question'])
                 ];
-    
+
                 if ($this->contactModel->createQuestion($data)) {
                     echo 'sending information...';
                     echo '<meta http-equiv="refresh" content="4;url=http://localhost/System-Dev/Contact/confirmation" />';
                 } else {
                     echo 'error';
-                    echo '<meta http-equiv="refresh" content="4;url=http://localhost/eCommerce-Project/" />';
-    
-                }
-            }
+                    echo '<meta http-equiv="refresh" content="4;url=http://localhost/System-Dev/" />';
 
-        }*/
+                }
+                } else {
+                $this->view('Contact/index');
+            }
+        }
     }
+
+    
 
     public function confirmation(){
         return $this->view('Contact/confirmation');
     }
+
+
 }
