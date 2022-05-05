@@ -1,0 +1,54 @@
+/*Home*/
+
+.content-section {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.home-image {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    font-family: "Cormorant Garamond";
+    color: #333;
+}
+
+.home-content {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    font-family: "Cormorant Garamond";
+    font-weight: bolder;
+    color: #333;
+}
+
+.button {
+    margin-top: 5rem;
+}
+
+.button a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #333;
+}
+
+.button a:hover {
+    color: #c59d5f;
+}

@@ -15,6 +15,9 @@
             window.scrollTo(0, 1);
         }
     </script> -->
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/login.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Custom Theme files -->
   <link href="<?php echo URLROOT; ?>/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
@@ -27,6 +30,12 @@
   <link href='http://fonts.googleapis.com/css?family=Redressed' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
   <!-- //web-fonts -->
+
+
+
+  <!-- Andrei -->
+
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/cssA/Header.css">
 </head>
 
 <body>
@@ -41,14 +50,14 @@
           <li><a href="/System-Dev/AboutUs" >About Us</a></li>
           <li><a href="/System-Dev/Contact">Contact Us</a></li>
           <li><a href="/System-Dev/Booking">Booking Now</a></li>
-          <li><a href="/System-Dev/People/logout"><i class="fa-solid fa-sign-out"></i> Logout</a></li>
-          <li><a href="contact.html">Contact</a></li>';
+          <li><a href="/System-Dev/People/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+          ';
           } else if (adminLogin()) {
             echo '<li><a href="/System-Dev/Booking" >Booking</a></li>
           <li><a href="/System-Dev/Reply" class="nav-links" ">Reply</a></li>
           <li><a href="/System-Dev/Client" class="nav-links" >Client</a></li>
           <li><a href="/System-Dev/Service" class="nav-links" >Service</a></li>
-          <li><a class="nav-links" href="/System-Dev/People/logout"><i class="fa-solid fa-sign-out"></i> Logout ' . $_SESSION['user_username'] . '</a></li>';
+          <li><a class="nav-links" href="/System-Dev/People/logout"><i class="fa fa-sign-out"></i> Logout ' . $_SESSION['user_username'] . '</a></li>';
           } else {
             echo '<li><a href="/System-Dev/Home/index">Home</a></li>
           <li><a href="/System-Dev/AboutUs" >About Us</a></li>
@@ -108,6 +117,64 @@
       </div>
       <!-- //banner-text -->
     </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+
+
+        <div class="navigation-top">
+
+
+
+          <?php
+
+
+          if (isLoggedIn()) {
+            echo '
+          <a href="/System-Dev/Home" class="nav-links" style="float:left; font-weight: bold;">Home</a>
+          <a href="/System-Dev/AboutUs" class="nav-links" style="float:left">About Us</a>
+          <a href="/System-Dev/Contact" class="nav-links" style="float:left">Contact Us</a>
+          <a href="/System-Dev/Contact" class="nav-links" style="float:left">More</a>
+        <a class="nav-links" href="/System-Dev/People/logout"><i class="fa fa-sign-out"></i> Logout</a>';
+          } else if (adminLogin()) {
+            echo '<a href="/System-Dev/Booking" class="nav-links" style="float:left;">Booking</a>
+        <a href="/System-Dev/Reply" class="nav-links" style="float:left">Reply</a>
+        <a href="/System-Dev/Client" class="nav-links" style="float:left">Client</a>
+        <a href="/System-Dev/Service" class="nav-links" style="float:left">Service</a>
+        <a class="nav-links" href="/System-Dev/People/logout"><i class="fa fa-sign-out"></i> Logout ' . $_SESSION['user_username'] . '</a>';
+          } else {
+            echo '
+      <a href="/System-Dev/Home" class="nav-links" style="float:left; font-weight: bold;">Home</a>
+      <a href="/System-Dev/AboutUs" class="nav-links" style="float:left">About Us</a>
+      <a href="/System-Dev/Contact" class="nav-links" style="float:left">Contact Us</a>
+      <a class="nav-links" href="/System-Dev/People/SignIn" style="float:right; font-weight: bold;"> Sign In</a>
+      <a class="nav-links" href="/System-Dev/People/SignUp" style="float:right; font-weight: bold;"> Sign Up</a>';
+          }
+          ?>
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+
+
+
+
   </div>
   <!-- //banner -->
 
@@ -172,55 +239,7 @@
 
 <!-- Andrei's header -->
 
-<link rel="stylesheet" href="<?php echo URLROOT; ?>/cssA/Header.css">
 
 <header class="p-3 bg-dark text-white">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-      </a>
 
-
-      <div class="navigation-top">
-
-
-
-        <?php
-        if (isLoggedIn()) {
-          echo '<a href="/System-Dev/Home" class="nav-links" style="float:left; font-weight: bold;">Home</a>
-        <a href="/System-Dev/AboutUs" class="nav-links" style="float:left">About Us</a>
-        <a href="/System-Dev/Contact" class="nav-links" style="float:left">Contact Us</a>
-        <a href="/System-Dev/Contact" class="nav-links" style="float:left">More</a>
-        <a class="nav-links" href="/System-Dev/People/logout"><i class="fa-solid fa-sign-out"></i> Logout</a>';
-        } else if (adminLogin()) {
-          echo '<a href="/System-Dev/Booking" class="nav-links" style="float:left;">Booking</a>
-        <a href="/System-Dev/Reply" class="nav-links" style="float:left">Reply</a>
-        <a href="/System-Dev/Client" class="nav-links" style="float:left">Client</a>
-        <a href="/System-Dev/Service" class="nav-links" style="float:left">Service</a>
-        <a class="nav-links" href="/System-Dev/People/logout"><i class="fa-solid fa-sign-out"></i> Logout ' . $_SESSION['user_username'] . '</a>';
-        } else {
-          echo '
-      <a href="/System-Dev/Home" class="nav-links" style="float:left; font-weight: bold;">Home</a>
-      <a href="/System-Dev/AboutUs" class="nav-links" style="float:left">About Us</a>
-      <a href="/System-Dev/Contact" class="nav-links" style="float:left">Contact Us</a>
-      <a class="nav-links" href="/System-Dev/People/SignIn" style="float:right; font-weight: bold;"> Sign In</a>
-      <a class="nav-links" href="/System-Dev/People/SignUp" style="float:right; font-weight: bold;"> Sign Up</a>';
-        }
-        ?>
-
-
-
-      </div>
-
-
-
-
-
-
-
-    </div>
-  </div>
 </header>

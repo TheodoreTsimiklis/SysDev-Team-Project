@@ -8,7 +8,7 @@ This is the Contact Page
         <div class="contact-row agileits-w3layouts">
             <div class="col-md-6 col-sm-6 contact-w3lsleft">
                 <div class="contact-grid agileits">
-                    
+
                     <form action="#" method="post">
                         <div class="styled-input agile-styled-input-top">
                             <input type="text" name="fName" required="">
@@ -99,10 +99,6 @@ This is the Contact Page
 <label for="question">Question</label>
 <textarea id="question" name="question" placeholder="Example text..." style="height:200px"></textarea>
 <input type="submit" name="submit"></input>
-<!--';
 
 
-
-}
-
-    ?>
+<?php include APPROOT . '/views/includes/footer.php'; ?>
