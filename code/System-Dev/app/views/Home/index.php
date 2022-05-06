@@ -34,11 +34,10 @@
                     </h3>
                     <p>
                         Ready to make your house more beautiful? With keen attention to detail and a strong commitment to quality workmanship,
-                        we offer multiple services, including .............................................................
-                        i forgot , need to add later
+                        we offer multiple services, including Interior & Exterior Painting, Sealing, Polishing and so on...
                     </p>
                     <div class="button">
-                        <!-- <a href="/System-Dev/AboutUs">More</a> -->
+                        <a href="/System-Dev/AboutUs">All Services</a>
                     </div>
                     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/hz70ucYZyy4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                     <iframe width="660" height="415" src="https://www.youtube.com/embed/MmgVDuJ8Un0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
