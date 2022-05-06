@@ -34,8 +34,8 @@
 
 
   <!-- Andrei -->
-
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/cssA/Header.css">
+  
 </head>
 
 <body>
@@ -54,14 +54,15 @@
           ';
           } else if (adminLogin()) {
             echo '<li><a href="/System-Dev/Booking" >Booking</a></li>
-          <li><a href="/System-Dev/Reply" class="nav-links" ">Reply</a></li>
+          <li><a href="/System-Dev/Reply" class="nav-links" ">Question</a></li>
           <li><a href="/System-Dev/Client" class="nav-links" >Client</a></li>
           <li><a href="/System-Dev/Service" class="nav-links" >Service</a></li>
           <li><a class="nav-links" href="/System-Dev/People/logout"><i class="fa fa-sign-out"></i> Logout ' . $_SESSION['user_username'] . '</a></li>';
           } else {
             echo '<li><a href="/System-Dev/Home/index">Home</a></li>
           <li><a href="/System-Dev/AboutUs" >About Us</a></li>
-          <li><a href="/System-Dev/Contact">Contact Us</a></li>
+          <li><a href="/System-Dev/People/SignIn">Contact Us</a></li>
+          <li><a href="/System-Dev/People/SignIn">Booking Now</a></li>
           <li><a href="/System-Dev/People/SignIn" > Sign In</a></li>
           <li><a class="nav-links" href="/System-Dev/People/SignUp" > Sign Up</a></li>';
           }
@@ -131,7 +132,6 @@
         <div class="navigation-top">
 
 
-
           <?php
 
 
@@ -140,11 +140,11 @@
           <a href="/System-Dev/Home" class="nav-links" style="float:left; font-weight: bold;">Home</a>
           <a href="/System-Dev/AboutUs" class="nav-links" style="float:left">About Us</a>
           <a href="/System-Dev/Contact" class="nav-links" style="float:left">Contact Us</a>
-          <a href="/System-Dev/Contact" class="nav-links" style="float:left">More</a>
+          <a href="/System-Dev/Booking" class="nav-links" style="float:left">Booking Now</a>
         <a class="nav-links" href="/System-Dev/People/logout"><i class="fa fa-sign-out"></i> Logout</a>';
           } else if (adminLogin()) {
             echo '<a href="/System-Dev/Booking" class="nav-links" style="float:left;">Booking</a>
-        <a href="/System-Dev/Reply" class="nav-links" style="float:left">Reply</a>
+        <a href="/System-Dev/Reply" class="nav-links" style="float:left">Question</a>
         <a href="/System-Dev/Client" class="nav-links" style="float:left">Client</a>
         <a href="/System-Dev/Service" class="nav-links" style="float:left">Service</a>
         <a class="nav-links" href="/System-Dev/People/logout"><i class="fa fa-sign-out"></i> Logout ' . $_SESSION['user_username'] . '</a>';
@@ -152,7 +152,8 @@
             echo '
       <a href="/System-Dev/Home" class="nav-links" style="float:left; font-weight: bold;">Home</a>
       <a href="/System-Dev/AboutUs" class="nav-links" style="float:left">About Us</a>
-      <a href="/System-Dev/Contact" class="nav-links" style="float:left">Contact Us</a>
+      <a href="/System-Dev/People/SignIn" class="nav-links" style="float:left">Contact Us</a>
+      <a href="/System-Dev/People/SignIn" class="nav-links" style="float:left">Booking Now</a>
       <a class="nav-links" href="/System-Dev/People/SignIn" style="float:right; font-weight: bold;"> Sign In</a>
       <a class="nav-links" href="/System-Dev/People/SignUp" style="float:right; font-weight: bold;"> Sign Up</a>';
           }

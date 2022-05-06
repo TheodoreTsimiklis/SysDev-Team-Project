@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2022 at 06:36 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Generation Time: May 06, 2022 at 09:09 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -73,6 +73,7 @@ CREATE TABLE `client_account` (
 --
 
 INSERT INTO `client_account` (`email`, `pass_hash`) VALUES
+('111@gmail.com', '$2y$10$83ER62LLd4.3EL3KAxQfrO6dpBTDKgzlGUlpll1MLSZ9YNziXYzMi'),
 ('a@gmail.com', '$2y$10$pATRPiiavqzlTiE9oxJWWe6J.ZEDCiED5wUQn12i1XzyODbrABClu'),
 ('aa@gmail.com', '$2y$10$C5fCIUeNkTFrWxLDRM0pwec.lHUEeLTph4Ag0PByOmfvKH35/zBSa'),
 ('b@gmail.com', '$2y$10$ZDhhIgQGoNzUNMvMm9hQQu/PllJbMY4l1Zodu2xYdpo/urrKUU2v.'),
@@ -100,38 +101,20 @@ CREATE TABLE `client_profile` (
 
 CREATE TABLE `question` (
   `question_id` int(11) NOT NULL,
-  `client_profile_id` int(11) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `question_description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questionnotloggedin`
---
-
-CREATE TABLE `questionnotloggedin` (
-  `question_id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
-  `phone` varchar(15) NOT NULL,
+  `phone` varchar(20) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `question` varchar(255) NOT NULL
+  `question` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `reply`
+-- Dumping data for table `question`
 --
 
-CREATE TABLE `reply` (
-  `reply_id` int(11) NOT NULL,
-  `question_id` int(11) NOT NULL,
-  `answer` varchar(255) NOT NULL,
-  `admin_account_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `question` (`question_id`, `first_name`, `last_name`, `phone`, `email`, `question`) VALUES
+(5, 'HUIXI', 'HUILJIU', '(111)111-1111', '111@gmail.com', 'test'),
+(6, 'HUIXI', 'HUILJIU', '(111)111-1111', '111111@gmail.com', 'testdabvbdhvsvdshv');
 
 -- --------------------------------------------------------
 
@@ -181,22 +164,7 @@ ALTER TABLE `client_profile`
 -- Indexes for table `question`
 --
 ALTER TABLE `question`
-  ADD PRIMARY KEY (`question_id`),
-  ADD KEY `client_profile_id` (`client_profile_id`);
-
---
--- Indexes for table `questionnotloggedin`
---
-ALTER TABLE `questionnotloggedin`
   ADD PRIMARY KEY (`question_id`);
-
---
--- Indexes for table `reply`
---
-ALTER TABLE `reply`
-  ADD PRIMARY KEY (`reply_id`),
-  ADD KEY `question_id` (`question_id`),
-  ADD KEY `admin_account_id` (`admin_account_id`);
 
 --
 -- Indexes for table `service`
@@ -230,19 +198,7 @@ ALTER TABLE `client_profile`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `questionnotloggedin`
---
-ALTER TABLE `questionnotloggedin`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `reply`
---
-ALTER TABLE `reply`
-  MODIFY `reply_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `service`
@@ -266,19 +222,6 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `client_profile`
   ADD CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `client_account` (`email`);
-
---
--- Constraints for table `question`
---
-ALTER TABLE `question`
-  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`client_profile_id`) REFERENCES `client_profile` (`client_profile_id`);
-
---
--- Constraints for table `reply`
---
-ALTER TABLE `reply`
-  ADD CONSTRAINT `admin_account_id` FOREIGN KEY (`admin_account_id`) REFERENCES `admin_account` (`admin_account_id`),
-  ADD CONSTRAINT `question_id` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,11 +1,14 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
 
-<div class="login">
+<div class="login" style=" height: 100%;
+                            width: 100%;
+                            background: url('<?php echo URLROOT; ?>/public/images/loginbg.png') no-repeat;
+                            background-size: cover;">
     <div class="form">
 
-        <form class="px-4 py-3" method="post" action="">
-            <h3 class="h3">LOGIN</h3>
+        <form class="input-form" method="post" action="" >
+            <h2 class="h2">LOGIN</h2>
 
             <div class="role">
 
@@ -32,10 +35,11 @@
             if ($data != []) {
                 echo '<div class="alert alert-danger" role="alert">' .
                     $data['msg'] . '
-        </div>';
+                    </div>';
             }
 
             ?>
+
         </form>
     </div>
 </div>

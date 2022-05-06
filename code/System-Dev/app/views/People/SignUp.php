@@ -1,10 +1,13 @@
 <?php require APPROOT . '/views/includes/header.php'; ?>
 
 
-<div class="login">
+<div class="login" style=" height: 100%;
+                            width: 100%;
+                            background: url('<?php echo URLROOT; ?>/public/images/loginbg.png') no-repeat;
+                            background-size: cover;">
   <div class="form">
-    <form class="px-4 py-3" method="post" action="">
-    <h3 class="h3">SIGN UP</h3>
+    <form class="input-form" method="post" action="">
+    <h2 class="h2">SIGN UP</h2>
 
 
       <div class="form-group">

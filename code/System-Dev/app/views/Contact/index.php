@@ -1,5 +1,5 @@
 <?php include APPROOT . '/views/includes/header.php'; ?>
-This is the Contact Page
+
 <div id="contact" class="contact cd-section">
     <div class="container">
         <div class="agileits-title">
@@ -11,31 +11,31 @@ This is the Contact Page
 
                     <form action="#" method="post">
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="fName" required="">
+                            <input type="text" name="fName" required>
                             <label>First Name</label>
                             <span></span>
                         </div>
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="lName" required="">
+                            <input type="text" name="lName" required>
                             <label>Last Name</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="text" name="Email" required="">
+                            <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                             <label>Email</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="text" name="phone" required="">
-                            <label>Phone</label>
+                            <input type="text" name="phone" required pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
+                            <label>Phone(nnn)nnn-nnnn</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <textarea name="question" required=""></textarea>
+                            <textarea name="question" required></textarea>
                             <label>Question</label>
                             <span></span>
                         </div>
-                        <input type="submit" value="SEND">
+                        <input type="submit" name="submit"></input>
                     </form>
                 </div>
             </div>
@@ -78,27 +78,6 @@ This is the Contact Page
 </div>
 <!-- //contact -->
 
-
-<!-- Andrei's version -->
-<div class="form-group">
-    <label for="fName">Balls</label>
-    <input type="text" class="form-control" id="fName" name="fName" placeholder="First Name">
-</div>
-<div class="form-group">
-    <label for="lName">Last Name</label>
-    <input type="text" class="form-control" id="lName" name="lName" placeholder="Last Name">
-</div>
-<div class="form-group">
-    <label for="pNumber">Phone Number</label>
-    <input type="text" class="form-control" id="pNumber" name="pNumber" placeholder="(###)###-####">
-</div>
-<div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-</div>
-<label for="question">Question</label>
-<textarea id="question" name="question" placeholder="Example text..." style="height:200px"></textarea>
-<input type="submit" name="submit"></input>
 
 
 <?php include APPROOT . '/views/includes/footer.php'; ?>
