@@ -11,7 +11,7 @@
         }
 
         public function getServiceImage($service_id) {
-            this->db->query("SELECT service_image FROM service WHERE ID = :service_id");
+            $this->db->query("SELECT service_image FROM service WHERE ID = :service_id");
             $this->db->bind(':service_id',$service_id);
             return $this->db->getSingle();
 

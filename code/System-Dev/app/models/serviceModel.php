@@ -25,17 +25,13 @@
 
         }
 
-        public function delete($data){
-            $this->db->query("DELETE FROM service WHERE ID=:service_id");
-            $this->db->bind('service_id',$data['ID']);
+        public function delete($service_id){
+            $this->db->query("DELETE FROM service WHERE service_id=:service_id");
+            $this->db->bind('service_id', $service_id);
 
-            if($this->db->execute()){
-                return true;
-            }
-            else{
-                return false;
-            }
+            return $this->db->execute();
 
         }
+
     }
 ?>

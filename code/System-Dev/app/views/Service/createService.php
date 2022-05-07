@@ -24,11 +24,11 @@
 
     <div class="form-group">
         <label for="nameinput">Service Name</label>
-        <input name="name" type="text" class="form-control" id="nameinput" placeholder="Service Name">
+        <input name="serviceName" type="text" class="form-control" id="nameinput" placeholder="Service Name">
     </div>
     <div class="form-group">
         <label for="cityinput">Service Description</label>
-        <input name="city" type="text" class="form-control" id="cityinput" placeholder="Service Description">
+        <input name="serviceDescription" type="text" class="form-control" id="cityinput" placeholder="Service Description">
     </div>
 
     <div class="form-group">

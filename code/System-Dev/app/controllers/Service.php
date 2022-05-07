@@ -13,11 +13,14 @@ class Service extends Controller {
     public function getServices(){
         $services = $this->serviceModel->getServices();
         $data = [
-            "service" => $services
+            "services" => $services
         ];
         $this->view('Service/getService',$data);
     }
 
+    /**
+     * add a service to database
+     */
     public function createService(){
         if(!isset($_POST['add'])){
             $this->view('Service/createService');
@@ -60,21 +63,28 @@ class Service extends Controller {
 
             //save the file to its permanent location
                 
-            $folder = dirname(APPROOT).'/public/image';
+            $folder = dirname(APPROOT).'/public/images';
             $filename = uniqid() . '.' . $acceptedTypes[$fileData['mime']];
             move_uploaded_file($file['tmp_name'], "$folder/$filename");
         }
         return $filename;
     }
 
+
+    /**
+     * delete a service
+     */
     public function delete($service_id){
-        $data=[
-            'ID' => $service_id
-        ];
-        if($this->serviceModel->delete($data)){
+       
+        if($this->serviceModel->delete($service_id)){
             echo 'Please wait we are deleting the service for you!';
             echo '<meta http-equiv="Refresh" content=".2; url=/System-Dev/Service/getServices">';
         }
 
     }
+
+
+
+
+   
 }
