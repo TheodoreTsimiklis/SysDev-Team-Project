@@ -1,11 +1,24 @@
 <?php include APPROOT.'/views/includes/header.php'; ?>
-This is the Service Page
 
-<form method="post" action="Service/insert">
+    <h1>Service Admin View</h1>
+    <br>
 
-<button name="submit" href="Service" class="btn btn-primary">Book</button>
-<button name="submit" href="/System-Dev/Service/insert" class="btn btn-primary">Book</button>
-<a href="/System-Dev/Service/insert">Contact Us</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/System-Dev/Service/getServices">View Services</a>
+        </li>
+        <br>
+        <br>
+        <li class="nav-item">
+            <a class="nav-link" href="/System-Dev/Service/createService">Create Services</a>
+        </li>
+        
+        </ul>
+    
+         </div>
+    </nav>
 
-</form>
+<?php require APPROOT . '/views/includes/footer.php'; ?>
 
