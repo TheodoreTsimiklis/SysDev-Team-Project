@@ -3,10 +3,15 @@
 class AboutUs extends Controller {
     public function __construct()
     {
-        $this->aboutUsModel = $this->model('aboutUsModel');
+        $this->serviceModel = $this->model('serviceModel');
     }
 
     public function index() {
-        return $this->view('AboutUs/index');
+        $services = $this->serviceModel->getServices();
+        $data = [
+            "services" => $services
+        ];
+        // $this->view('Service/getService',$data);
+        return $this->view('AboutUs/index', $data);
     }
 }

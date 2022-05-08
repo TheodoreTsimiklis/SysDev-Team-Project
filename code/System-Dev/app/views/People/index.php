@@ -28,7 +28,7 @@
                 <input type="password" class="form-control" id="password" name="Password" placeholder="Password">
             </div>
             <div class='mt-2'>
-                <button type="submit" name="admin" class="btn btn-primary">Sign in</button>
+                <button type="submit" name="admin" class="btn btn-primary" style="margin-bottom: 15px;">Sign in</button>
             </div>
             <?php
 

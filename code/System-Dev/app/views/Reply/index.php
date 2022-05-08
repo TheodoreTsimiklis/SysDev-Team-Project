@@ -1,6 +1,6 @@
 <?php include APPROOT . '/views/includes/header.php'; ?>
 
-    </style>
+    
 <div class="" style="min-height: 100vh;background: url('<?php echo URLROOT; ?>/images/bg.png'); no-repeat center; background-size: cover;">
 
     <div class="table-responsive" style="transform: scale(1);transform-origin: top;opacity: 0.88;filter: contrast(92%); margin: auto 15rem;">

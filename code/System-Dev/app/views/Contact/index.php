@@ -74,6 +74,28 @@
             </div>
             <div class="clearfix"> </div>
         </div>
+
+        <div class="mapouter" style="margin:auto; margin-top: 50px;">
+            <div class="gmap_canvas"><iframe width="1200" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=821%20Sainte%20Croix%20Ave,%20Saint-Laurent,%20Quebec%20H4L%203X9&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 500px;
+                        width: 1200;
+                    }
+                </style><a href="https://www.embedgooglemap.net">embedding a google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 1200px;
+                    }
+                </style>
+            </div>
+        </div>
+
     </div>
 </div>
 <!-- //contact -->

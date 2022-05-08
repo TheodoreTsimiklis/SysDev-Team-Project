@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2022 at 09:09 AM
+-- Generation Time: May 08, 2022 at 10:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -42,20 +42,6 @@ INSERT INTO `admin_account` (`admin_account_id`, `username`, `pass_hash`) VALUES
 (3, 'Theo', '123456789'),
 (4, 'Jiahui', '123456789'),
 (5, 'George', '123456789');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `booking`
---
-
-CREATE TABLE `booking` (
-  `booking_id` int(11) NOT NULL,
-  `service_id` int(11) NOT NULL,
-  `client_profile_id` int(11) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
-  `booking_description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -113,8 +99,8 @@ CREATE TABLE `question` (
 --
 
 INSERT INTO `question` (`question_id`, `first_name`, `last_name`, `phone`, `email`, `question`) VALUES
-(5, 'HUIXI', 'HUILJIU', '(111)111-1111', '111@gmail.com', 'test'),
-(6, 'HUIXI', 'HUILJIU', '(111)111-1111', '111111@gmail.com', 'testdabvbdhvsvdshv');
+(5, 'Jiahui', 'Xia', '(111)111-1111', '111@gmail.com', 'HI, i would like to know more information about painting for bedroom. Thank you'),
+(6, 'Jiahuiiiiii', 'Xiaaaaaa', '(111)111-1111', '111111@gmail.com', 'I have a question');
 
 -- --------------------------------------------------------
 
@@ -125,9 +111,18 @@ INSERT INTO `question` (`question_id`, `first_name`, `last_name`, `phone`, `emai
 CREATE TABLE `service` (
   `service_id` int(11) NOT NULL,
   `service_name` varchar(255) NOT NULL,
-  `service_description` varchar(255) NOT NULL,
+  `service_description` varchar(500) NOT NULL,
   `service_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `service`
+--
+
+INSERT INTO `service` (`service_id`, `service_name`, `service_description`, `service_image`) VALUES
+(3, 'Sealing', 'Stone surfaces need to be sealed properly to keep them clean and preserved. Whether it is your travertine floor, or granite counter,  Stone surfaces need to be sealed properly to keep them clean and preserved. Whether it is your travertine floor, or granite counter, Services Éconet can seal them to preserve them. To ensure best results it’s best to ensure a good cleaning takes place first. A sealed floor will look cleaner longer, will be harder to stain, and will eventually last a lot longer.   ', '62780bffcf0e1.jpg'),
+(4, 'Painting', 'Whether indoors or out, for your home or your business, Service Éconet revamp the look of your walls, creating beautiful and fresh spaces. Our painters work efficiently to deliver a quality paint job in any room you need.   Our professional painting services are:  Interior painting services Exterior painting services', '62780c170f5b5.jpg'),
+(5, 'Concrete Polishing & Repair', 'A concrete floor can rival any natural stone in beauty when polished to perfection. Our team combines expertise and technique to deliver a beautifully polished floor that will give the final touch to any space.  We can offer the following services and finishes  Mat finish Glossy finish Satin finish Broken concrete floor repairs', '62780c34b2831.jpg');
 
 --
 -- Indexes for dumped tables
@@ -138,14 +133,6 @@ CREATE TABLE `service` (
 --
 ALTER TABLE `admin_account`
   ADD PRIMARY KEY (`admin_account_id`);
-
---
--- Indexes for table `booking`
---
-ALTER TABLE `booking`
-  ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `service_id` (`service_id`),
-  ADD KEY `client_profile_id` (`client_profile_id`);
 
 --
 -- Indexes for table `client_account`
@@ -183,12 +170,6 @@ ALTER TABLE `admin_account`
   MODIFY `admin_account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `booking`
---
-ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `client_profile`
 --
 ALTER TABLE `client_profile`
@@ -198,24 +179,17 @@ ALTER TABLE `client_profile`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `booking`
---
-ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`client_profile_id`) REFERENCES `client_profile` (`client_profile_id`),
-  ADD CONSTRAINT `service_id` FOREIGN KEY (`service_id`) REFERENCES `service` (`service_id`);
 
 --
 -- Constraints for table `client_profile`
